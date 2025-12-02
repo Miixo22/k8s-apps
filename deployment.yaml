@@ -2,7 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: springbootapi-deployment
-  namespace: default
+  labels:
+    app: springbootapi
 spec:
   replicas: 1
   selector:
@@ -13,11 +14,11 @@ spec:
       labels:
         app: springbootapi
     spec:
-    containers:
+      containers:
         - name: springbootapi
-          image: miixo22/springbootapi:latest
+          image: miixo22/springbootapi-app:latest
           ports:
-            - containerPort: 8081
+            - containerPort: 8080
           envFrom:
             - configMapRef:
                 name: springbootapi-config
