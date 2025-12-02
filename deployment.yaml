@@ -15,9 +15,9 @@ spec:
     spec:
     containers:
         - name: springbootapi
-          image: miixo22/springbootapi-app:latest
+          image: miixo22/springbootapi:latest
           ports:
-            - containerPort: 8080
+            - containerPort: 8081
           envFrom:
             - configMapRef:
                 name: springbootapi-config
